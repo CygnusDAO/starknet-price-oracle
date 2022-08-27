@@ -46,7 +46,7 @@ from starkware.starknet.common.syscalls import (
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
 # Libraries
-from src.cygnus_oracle.libraries.ud58x18 import MathUD58x18  # Custom library -> not thoroughly tested
+from src.cygnus_oracle.libraries.math_ud58x18 import MathUD58x18  # Custom library -> not thoroughly tested
 from src.cygnus_oracle.libraries.reentrancy_guard import ReentrancyGuard
 
 # interfaces

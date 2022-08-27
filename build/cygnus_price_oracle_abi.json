@@ -1,0 +1,328 @@
+[
+    {
+        "members": [
+            {
+                "name": "oracle_id",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "initialized",
+                "offset": 1,
+                "type": "felt"
+            },
+            {
+                "name": "lp_token_pair",
+                "offset": 2,
+                "type": "felt"
+            },
+            {
+                "name": "empiric_key_token0",
+                "offset": 3,
+                "type": "felt"
+            },
+            {
+                "name": "empiric_key_token1",
+                "offset": 4,
+                "type": "felt"
+            },
+            {
+                "name": "initialized_timestamp",
+                "offset": 5,
+                "type": "felt"
+            },
+            {
+                "name": "deletion_timestamp",
+                "offset": 6,
+                "type": "felt"
+            }
+        ],
+        "name": "CygnusEmpiricLPOracle",
+        "size": 7,
+        "type": "struct"
+    },
+    {
+        "data": [
+            {
+                "name": "new_nebula_oracle",
+                "type": "CygnusEmpiricLPOracle"
+            }
+        ],
+        "keys": [],
+        "name": "InitializeCygnusOracle",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "deleted_nebula_oracle",
+                "type": "CygnusEmpiricLPOracle"
+            }
+        ],
+        "keys": [],
+        "name": "DeleteCygnusOracle",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "pending_admin",
+                "type": "felt"
+            },
+            {
+                "name": "admin",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "NewPendingAdmin",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "old_admin",
+                "type": "felt"
+            },
+            {
+                "name": "admin",
+                "type": "felt"
+            }
+        ],
+        "keys": [],
+        "name": "NewAdmin",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "admin",
+                "type": "felt"
+            },
+            {
+                "name": "dai",
+                "type": "felt"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [],
+        "name": "name",
+        "outputs": [
+            {
+                "name": "name",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "symbol",
+        "outputs": [
+            {
+                "name": "symbol",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "decimals",
+        "outputs": [
+            {
+                "name": "decimals",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "version",
+        "outputs": [
+            {
+                "name": "version",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "dai",
+        "outputs": [
+            {
+                "name": "dai",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "admin",
+        "outputs": [
+            {
+                "name": "admin",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "pending_admin",
+        "outputs": [
+            {
+                "name": "pending_admin",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "empiric_oracle_address",
+        "outputs": [
+            {
+                "name": "empiric_oracle_address",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "aggregation_mode",
+        "outputs": [
+            {
+                "name": "aggregation_mode",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "lp_token_pair",
+                "type": "felt"
+            }
+        ],
+        "name": "get_oracle",
+        "outputs": [
+            {
+                "name": "CygnusEmpiricLPOracle",
+                "type": "CygnusEmpiricLPOracle"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "total_oracles",
+        "outputs": [
+            {
+                "name": "total_oracles",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "get_dai_price",
+        "outputs": [
+            {
+                "name": "dai_price",
+                "type": "felt"
+            },
+            {
+                "name": "dai_decimals",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "lp_token_pair",
+                "type": "felt"
+            }
+        ],
+        "name": "get_lp_token_price_dai",
+        "outputs": [
+            {
+                "name": "lp_token_price",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "lp_token_pair",
+                "type": "felt"
+            },
+            {
+                "name": "empiric_key_token0",
+                "type": "felt"
+            },
+            {
+                "name": "empiric_key_token1",
+                "type": "felt"
+            }
+        ],
+        "name": "initialize_oracle",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "lp_token_pair",
+                "type": "felt"
+            }
+        ],
+        "name": "delete_oracle",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "new_pending_admin",
+                "type": "felt"
+            }
+        ],
+        "name": "set_oracle_pending_admin",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "set_oracle_admin",
+        "outputs": [],
+        "type": "function"
+    }
+]
