@@ -1,20 +1,20 @@
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 #                                       .           .
-#      █████████           ---======*.                       .             .              .
-#     ███░░░░░███                                              📡  .               .              🌔
-#    ███     ░░░  █████ ████  ███████ ████████   █████ ████  █████  ⠀⠀⠀⠀ .  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-#   ░███         ░░███ ░███  ███░░███░░███░░███ ░░███ ░███  ███░░   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                      .
-#   ░███          ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███ ░░█████  ⠀⠀⠀🛰️⠀⠀⠀⠀⠀⠀ .
-#   ░░███     ███ ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███  ░░░░██  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀.   🛸        .
-#    ░░█████████  ░░███████ ░░███████ ████ █████ ░░████████ ██████
-#     ░░░░░░░░░    ░░░░░███  ░░░░░███░░░░ ░░░░░   ░░░░░░░░ ░░░░░░   ⠀⠀.⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀             .
-#                  ███ ░███  ███ ░███ ⠀⠀⠀⠀⠀⠀⠀.⠀⠀⠀⠀ ⠀ ⠀⠀ ⠀⠀.⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀   .               .
-#    .      *     ░░██████  ░░██████                                   ---------========*.
-#                  ░░░░░░    ░░░░░░
-#      .                           . ⠀    .                .
-#    https://cygnusdao.finance                  .                .
-#                                    ⠀⠀⠀
-#    Cygnus-Empiric: LP Price Oracle
+#      █████████           ---======*.                       .         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣿⣿⣿⣿⣿⣷⣶⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#     ███░░░░░███                                              📡  .   ⠀⠀⣠⣦⣤⣤⣶⣶⣿⣿⣿⣿⣿⠿⠿⠟⠛⠛⠛⠛⠻⠿⠿⢿⣿⣿⣿⣶⣦⣤⣀⣀⣀⣠⣄⠀
+#    ███     ░░░  █████ ████  ███████ ████████   █████ ████  █████  ⠀⠀ ⠀⢰⣿⣿⣿⣿⣿⣿⠿⠛⢉⣁⣠⣤⣴⣶⣶⣶⣶⣶⣤⣤⣤⣀⡀⠉⠛⠻⠿⣿⣿⣿⣿⣿⡿⠀
+#   ░███         ░░███ ░███  ███░░███░░███░░███ ░░███ ░███  ███░░   ⠀⠀ ⠀⢀⡉⠛⣋⣉⣥⣴⣶⣿⣿⣿⣿⣿⠿⢿⣿⣿⣿⣿⣿⠿⠿⣿⣿⣷⣶⣤⣀⡀⠈⠉⠉⠉⠀⠀
+#   ░███          ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███ ░░█████  ⠀⠀ ⠀⢾⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⠀⠀⠀⠈⢿⣿⣿⣿⡟⠀⠀⠀⠉⠛⠻⠿⣿⣿⣿⣿⣿⣿⣇⠀
+#   ░░███     ███ ░███ ░███ ░███ ░███ ░███ ░███  ░███ ░███  ░░░░██  ⠀⠀ ⠀⠈⠛⠻⠿⠿⣿⣿⣷⣦⣄⣀⠀⠀⠀⠀⠀⠉⠉⠉⠀⠀⠀⢀⣀⣠⣴⣶⣿⣿⠿⠛⠛⠉⠉⠀
+#    ░░█████████  ░░███████ ░░███████ ████ █████ ░░████████ ██████     ⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠿⣿⣿⣿⣶⣶⣶⣶⣶⣴⣶⣶⣿⣿⣿⣿⢿⣿⠏⠀⠀⠀⠀⠀⠀
+#     ░░░░░░░░░    ░░░░░███  ░░░░░███░░░░ ░░░░░   ░░░░░░░░ ░░░░░░   ⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠙⠛⠛⠻⠛⠛⢛⣻⣿⣿⠟⢁⣿⣿⠀⠀⠀⠀⠀⠀⠀
+#                  ███ ░███  ███ ░███ ⠀⠀⠀⠀⠀⠀⠀.⠀⠀⠀⠀ ⠀ ⠀⠀ ⠀⠀.⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀ ⠀⢀⣴⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠛⠁⢀⣾⣿⣿⣀⠀⠀⠀⠀⠀⠀
+#    .      *     ░░██████  ░░██████    ---===========*.               ⠀⣾⣿⡟⢹⣿⣿⣿⠄⠀⠀⠀⠀⠀⠀⠀⣀⣴⣿⣿⠟⠀⠀⠀⣼⣿⣿⣿⣿⣿⡶⠀⠀⠀⠀
+#                  ░░░░░░    ░░░░░░                                    ⠀⣿⣿⠁⠈⠻⠿⠟⠀⠀⠀⠀⠀⢀⣠⣾⣿⡿⠟⠁⠀⠀⠀⢠⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀
+#      .                           . ⠀    .                .           ⠀⠘⣿⣧⣄⡀⠀⠀⠀⣀⣠⣤⣶⣿⣿⠿⠋⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀
+#         https://cygnusdao.finance                  .                 ⠀⠀⠘⠿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀
+#                                    ⠀⠀⠀                               ⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+#         Cygnus-Empiric: LP Price Oracle 𓂀                            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 #
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
@@ -26,6 +26,7 @@ from starkware.cairo.common.math import assert_not_zero, assert_not_equal
 from starkware.cairo.common.bool import FALSE, TRUE
 from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.pow import pow
+from starkware.cairo.common.uint256 import Uint256, uint256_eq, uint256_le, uint256_lt
 
 # Starkware syscalls
 from starkware.starknet.common.syscalls import (
@@ -50,9 +51,9 @@ from src.cygnus_oracle.libraries.math_ud58x18 import MathUD58x18  # Custom libra
 from src.cygnus_oracle.libraries.reentrancy_guard import ReentrancyGuard
 
 # interfaces
-from src.cygnus_oracle.interfaces.erc20_interface import IERC20
-from src.cygnus_oracle.interfaces.dex_pair_interface import IPair
-from src.cygnus_oracle.interfaces.empiric_oracle_interface import IEmpiricOracle
+from src.cygnus_oracle.interfaces.interface_erc20 import IERC20
+from src.cygnus_oracle.interfaces.interface_dex_pair import IPair
+from src.cygnus_oracle.interfaces.interface_empiric_oracle import IEmpiricOracle
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 #     1. STRUCTS
@@ -71,11 +72,8 @@ from src.cygnus_oracle.interfaces.empiric_oracle_interface import IEmpiricOracle
 struct CygnusEmpiricLPOracle:
     member oracle_id : felt
     member initialized : felt
-    member lp_token_pair : felt
     member empiric_key_token0 : felt
     member empiric_key_token1 : felt
-    member initialized_timestamp : felt
-    member deletion_timestamp : felt
 end
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -195,14 +193,6 @@ end
 func Dai() -> (dai : felt):
 end
 
-#
-# @notice Simple counter++
-# @return total_oracles The total number of initialized oracles
-#
-@storage_var
-func Total_Oracles() -> (total_oracles : felt):
-end
-
 # Mapping storage ───────────────────────────────────
 
 #
@@ -211,7 +201,15 @@ end
 # @return CygnusEmpiricLPOracle The struct containing the info and price feeds used for the lp_token_pair
 #
 @storage_var
-func Get_Oracle(lp_token_pair : felt) -> (CygnusEmpiricLPOracle : CygnusEmpiricLPOracle):
+func Oracles(lp_token_pair : felt) -> (CygnusEmpiricLPOracle : CygnusEmpiricLPOracle):
+end
+
+#
+# @notice Simple counter++
+# @return total_oracles The total number of initialized oracles
+#
+@storage_var
+func Total_Oracles() -> (total_oracles : felt):
 end
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -230,15 +228,15 @@ end
 #
 @constructor
 func constructor{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
-    admin : felt, dai : felt
+    admin : felt, price_denominator : felt
 ):
     #
     # ERORR: Doesn`t get deployed
     #
-    assert_not_zero(admin * dai)
+    assert_not_zero(admin * price_denominator)
 
     # name of this oracle
-    Name.write(value='Cygnus-Empiric: LP Oracle')
+    Name.write(value='Cygnus-Empiric: LP Price Oracle')
 
     # symbol used by this oracle
     Symbol.write(value='CygNebula')
@@ -250,7 +248,7 @@ func constructor{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_p
     Admin.write(value=admin)
 
     # store the key from Empiric for denom token
-    Dai.write(value=dai)
+    Dai.write(value=price_denominator)
 
     # store the version
     Version.write(value=1)
@@ -362,10 +360,10 @@ end
 # @return CygnusEmpiricLPOracle The recorded info of this LP Token`s oracle (if any)
 #
 @view
-func get_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+func get_price_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
     lp_token_pair : felt
 ) -> (CygnusEmpiricLPOracle : CygnusEmpiricLPOracle):
-    return Get_Oracle.read(lp_token_pair=lp_token_pair)
+    return Oracles.read(lp_token_pair=lp_token_pair)
 end
 
 #
@@ -423,7 +421,7 @@ func normalize_reserves{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_
     alloc_locals
 
     # the decimals used by this ERC20 token
-    let token_decimals : felt = 18
+    let (token_decimals : felt) = IERC20.decimals(contract_address=token)
 
     # explicitly get the decimals from the oracle (avoid setting fixed `18`, future problems)
     let (oracle_decimals : felt) = Decimals.read()
@@ -443,7 +441,7 @@ end
 #
 # @notice Same as normalize reserves, but normalize the price with decimals
 # @param price The price from Empiric`s price feed
-# @return token_decimals The decimals of token0 or token1 in the price feeds
+# @return token_decimals The decimals of empiric`s price feed for this token
 # @return adjusted_price The price adjutes to 18 decimals (if needed)
 #
 func normalize_price{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
@@ -469,8 +467,9 @@ end
 # ─────────────────────────────────────────────────── External ───────────────────────────────────────────────────────
 
 #
-# @notice Getter for dai price used for simplicity.
+# @notice Getter for dai price (or denom_token) used for simplicity.
 # @return dai_price The price of dai from Empiric
+# @return dai_decimals The decimals used for this price feed, used to normalize later if need be
 #
 @view
 func get_dai_price{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (
@@ -488,19 +487,52 @@ func get_dai_price{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check
 end
 
 #
+# @notice Gets the prices of both assets from an LP Token from Empiric price feeds
+# @param lp_token_pair The address of the LP Token
+# @return token0_price The price of token 0
+# @return token1_price The price of token 1
+#
+@view
+func get_asset_prices{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+    lp_token_pair : felt
+) -> (token0_price : felt, token1_price : felt):
+    # Load oracle from mapping
+    let (cygnus_nebula : CygnusEmpiricLPOracle) = get_price_oracle(lp_token_pair=lp_token_pair)
+
+    #
+    # ERROR: oracle_not_initialized
+    #
+    with_attr error_message("empiric_lp_oracle__oracle_not_initialized({lp_token_pair})"):
+        # require initialized == TRUE
+        assert cygnus_nebula.initialized = TRUE
+    end
+
+    # price of token0 from this LP Token
+    let (token0_price : felt, _, _, _) = IEmpiricOracle.get_value(
+        EMPIRIC_ORACLE_ADDRESS, cygnus_nebula.empiric_key_token0, AGGREGATION_MODE
+    )
+
+    # price of token1 from this LP Token
+    let (token1_price : felt, _, _, _) = IEmpiricOracle.get_value(
+        EMPIRIC_ORACLE_ADDRESS, cygnus_nebula.empiric_key_token1, AGGREGATION_MODE
+    )
+
+    return (token0_price, token1_price)
+end
+
+#
 # @notice Calculates the price of 1 unit of the lp_token_pair in DAI
 #
 @view
-func get_lp_token_price_dai{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
+func get_lp_token_price{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
     lp_token_pair : felt
 ) -> (lp_token_price : felt):
-    # ap += SIZEOF_LOCALS
     alloc_locals
 
     # 1. ────────────── Get stored LP Token Oracle ──────────────────────────
 
     # Load oracle from mapping
-    let (cygnus_nebula : CygnusEmpiricLPOracle) = get_oracle(lp_token_pair=lp_token_pair)
+    let (cygnus_nebula : CygnusEmpiricLPOracle) = get_price_oracle(lp_token_pair=lp_token_pair)
 
     #
     # ERROR: oracle_not_initialized
@@ -513,21 +545,23 @@ func get_lp_token_price_dai{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, ra
     # 2. ────────────── Get token0 and token1 from LP ───────────────────────
 
     # get the token0 from the lp token
-    let (token0 : felt) = IPair.getToken0(contract_address=lp_token_pair)
+    let (token0 : felt) = IPair.token0(contract_address=lp_token_pair)
 
     # Get the token1 from the lp token
-    let (token1 : felt) = IPair.getToken1(contract_address=lp_token_pair)
+    let (token1 : felt) = IPair.token1(contract_address=lp_token_pair)
 
     # 3. ────────────── Normalize reserves (if necessary) ───────────────────
 
     # get reserves of token0 and token 1 from liquidity pool
-    let (token0_reserves, token1_reserves, _) = IPair.getReserves(contract_address=lp_token_pair)
+    let (token0_reserves : Uint256, token1_reserves : Uint256, _) = IPair.get_reserves(
+        contract_address=lp_token_pair
+    )
 
     # pass token0 address and reserves to account for difference in decimals (if any)
-    let (token0_adjusted_reserves : felt) = normalize_reserves(token0, token0_reserves)
+    let (token0_adjusted_reserves : felt) = normalize_reserves(token0, token0_reserves.low)
 
     # pass token1 address and reserves to account for difference in decimals (if any)
-    let (token1_adjusted_reserves : felt) = normalize_reserves(token1, token1_reserves)
+    let (token1_adjusted_reserves : felt) = normalize_reserves(token1, token1_reserves.low)
 
     #
     # ERROR: reserves_not_zero
@@ -571,10 +605,10 @@ func get_lp_token_price_dai{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, ra
     # price / total LP Token supply
 
     # LP Token's total supply
-    let total_supply : felt = IPair.totalSupply(contract_address=lp_token_pair)
+    let (total_supply : Uint256) = IPair.totalSupply(contract_address=lp_token_pair)
 
     # half price of what should be in the liquidity pool
-    let (half_price : felt) = MathUD58x18.mul_div(reserves_gm, prices_gm, total_supply)
+    let (half_price : felt) = MathUD58x18.mul_div(reserves_gm, prices_gm, total_supply.low)
 
     # total price in the pool in USD (price feeds)
     let (lp_token_price_usd : felt) = MathUD58x18.mul(half_price, 2)
@@ -595,7 +629,6 @@ func get_lp_token_price_dai{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, ra
     # return the price of 1 LP Token of the underlying in DAI
     return (lp_token_price)
 end
-
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 #     7. NON-CONSTANT FUNCTIONS
@@ -622,13 +655,12 @@ func initialize_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_c
     oracle_admin_internal()
 
     # load oracle of this LP Token from mapping (if any)
-    let (new_oracle : CygnusEmpiricLPOracle) = get_oracle(lp_token_pair)
+    let (new_oracle : CygnusEmpiricLPOracle) = get_price_oracle(lp_token_pair)
 
     #
     # ERROR: oracle_already_initialized
     #
-    with_attr error_message(
-            "empiric_lp_oracle__oracle_already_initialized({lp_token_pair}, {empiric_key_token0}, {empiric_key_token1})"):
+    with_attr error_message("empiric_lp_oracle__oracle_already_initialized({lp_token_pair})"):
         # check 0
         assert_not_zero(lp_token_pair)
 
@@ -641,22 +673,16 @@ func initialize_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_c
     # get current length = id
     let (number_of_oracles : felt) = Total_Oracles.read()
 
-    # unix time of activation
-    let (initialized_timestamp : felt) = get_block_timestamp()
-
     # create new oracle struct
     let store_new_oracle = CygnusEmpiricLPOracle(
         oracle_id=number_of_oracles,
         initialized=1,
-        lp_token_pair=lp_token_pair,
         empiric_key_token0=empiric_key_token0,
         empiric_key_token1=empiric_key_token1,
-        initialized_timestamp=initialized_timestamp,
-        deletion_timestamp=0,
     )
 
     # write new oracle struct to storage
-    Get_Oracle.write(lp_token_pair, store_new_oracle)
+    Oracles.write(lp_token_pair, store_new_oracle)
 
     # add id counter
     Total_Oracles.write(number_of_oracles + 1)
@@ -689,7 +715,7 @@ func delete_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check
     oracle_admin_internal()
 
     # read oracle from mapping
-    let (oracle : CygnusEmpiricLPOracle) = get_oracle(lp_token_pair)
+    let (oracle : CygnusEmpiricLPOracle) = get_price_oracle(lp_token_pair)
 
     # get current length = id
     let (number_of_oracles : felt) = Total_Oracles.read()
@@ -705,22 +731,13 @@ func delete_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check
         assert oracle.initialized = TRUE
     end
 
-    # unix time of activation
-    let (deletion_timestamp : felt) = get_block_timestamp()
-
     # create new oracle struct
     let delete_oracle = CygnusEmpiricLPOracle(
-        oracle_id=number_of_oracles,
-        initialized=0,
-        lp_token_pair=lp_token_pair,
-        empiric_key_token0=0,
-        empiric_key_token1=0,
-        initialized_timestamp=oracle.initialized_timestamp,
-        deletion_timestamp=deletion_timestamp,
+        oracle_id=number_of_oracles, initialized=0, empiric_key_token0=0, empiric_key_token1=0
     )
 
-    # write new empty oracle struct to storage, dont decrease total oracle counter
-    Get_Oracle.write(lp_token_pair, delete_oracle)
+    # write new empty oracle struct to storage, dont decrease total oracle counter or else mess up ids
+    Oracles.write(lp_token_pair, delete_oracle)
 
     #
     # EVENT: DeleteCygnusOracle

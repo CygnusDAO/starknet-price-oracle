@@ -29,10 +29,10 @@ from starkware.cairo.common.uint256 import Uint256
 # @notice Simple Cairo implementation of PRB Math, specifically the unsigned library:
 #         https://github.com/paulrberg/prb-math/blob/main/contracts/PRBMathUD58.18.sol)
 #
-# Fixed point Smart contract library for basic fixed-point math that operates with unsigned 58.18-decimal fixed-point
-# numbers. The name of the number formats stems from the fact that there can be up to 58 digits in the integer part
-# and up to 18 decimals in the fractional part. The numbers are bound by the minimum and the maximum values permitted
-# by the Cairo `felt` type.
+# @notice Fixed point Smart contract library for basic fixed-point math that operates with unsigned 58.18-decimal
+#         fixed-point numbers. The name of the number formats stems from the fact that there can be up to 58 digits in
+#         the integer part and up to 18 decimals in the fractional part. The numbers are bound by the minimum and the
+#         maximum values permitted by the Cairo `felt` type.
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 
@@ -40,19 +40,27 @@ namespace MathUD58x18:
     # ───────────────── CONSTANTS
 
     #
-    # @dev Cairo's highest possible number `P` before overflows occur
+    # @dev Cairo's highest possible number `P` at which overflows occur (P = 0)
+    # @dev ie. 2^251 + 17 * 2^192 + 1
     #
-    const P_UD58x18 = 3618502788666131213697322783095070105623107215331596699973092056135872020481  # 2^251 + 17 * 2^192 + 1
+    const P_UD58x18 = 3618502788666131213697322783095070105623107215331596699973092056135872020481
 
     #
-    # @dev Half Cairo's `P`
+    # Max cairo number before overflows
     #
-    const HALF_P_UD58x18 = 1809251394333065606848661391547535052811553607665798349986546028067936010240  # 2^250 + 8 * 2^192 + 2^191
+    const CAIRO_MAX = P_UD58x18 - 1
 
     #
-    # @dev The maximum value an unsigned 58.18-decimal fixed-point number can have
+    # @dev Half Cairo's `P`, or
+    # @dev ie. 2^250 + 8 * 2^192 + 2^191
     #
-    const MAX_UD58x18 = 1809251394333065553493296640760748560207343510400633813116524750123642650623  # 2^250 - 1
+    const HALF_P_UD58x18 = 1809251394333065606848661391547535052811553607665798349986546028067936010240
+
+    #
+    # @dev The maximum value an unsigned 58.18-decimal fixed-point number can have (250 bit size of all 1's)
+    # @dev ie. 2^250 - 1
+    #
+    const MAX_UD58x18 = 1809251394333065553493296640760748560207343510400633813116524750123642650623
 
     #
     # @dev The maximum whole value an unsigned 58.18-decimal fixed-point number can have
@@ -69,15 +77,10 @@ namespace MathUD58x18:
     #
     const HALF_SCALE = 5 * 10 ** 17
 
-    #
-    # @dev Used for the bitwise not operator
-    #
-    const ALL_ONES = 2 ** 251 - 1
-
     # ───────────────── UINT250 CHECK
 
     #
-    # @dev Asserts that params and the result are in the range [0, 2^250].
+    # @dev Asserts that x, y and the result of the operation are in the range [0, 2^250].
     #
     func assert58x18{range_check_ptr}(x : felt, y : felt, result : felt):
         # check that the param `x` passed is ud58x18
@@ -136,15 +139,15 @@ namespace MathUD58x18:
 
     #
     # @notice Shift bits to the right and lose values
-    # @param word a 32 bits word
-    # @param n the amount of bits to shift
-    # @return The word with the last n bits shifted
+    # @param x a 32 bits word
+    # @param y the amount of bits to shift
+    # @return result word with the last n bits shifted
     #
-    # func right_shift{range_check_ptr}(word : felt, n : felt) -> (word : felt):
-    #    let (divisor) = pow2(n)
-    #    let (p, _) = unsigned_div_rem(word, divisor)
-    #    return (p)
-    # end
+    func bit_right_shift{range_check_ptr}(x : felt, y : felt) -> (result : felt):
+        let (divisor : felt) = pow2(y)
+        let (result : felt, _) = unsigned_div_rem(x, divisor)
+        return (result)
+    end
 
     #
     # @notice Shift bits to the left and lose values
@@ -152,13 +155,13 @@ namespace MathUD58x18:
     # @param n the amount of bits to shift
     # @return The word with the last n bits shifted
     #
-    # func left_shift{range_check_ptr}(word : felt, n : felt) -> (word : felt):
-    #    alloc_locals
-    #    let (divisor) = pow2(32 - n)
-    #    let (_, r) = unsigned_div_rem(word, divisor)
-    #    let (multiplicator) = pow2(n)
-    #    return (multiplicator * r)
-    # end
+    func bit_left_shift{range_check_ptr}(word : felt, n : felt) -> (word : felt):
+        alloc_locals
+        let (divisor : felt) = pow2(32 - n)
+        let (_, r : felt) = unsigned_div_rem(word, divisor)
+        let (multiplicator : felt) = pow2(n)
+        return (multiplicator * r)
+    end
 
     # ────────────────────────────────── AVERAGE
 
@@ -169,14 +172,13 @@ namespace MathUD58x18:
     # @return result The arithmetic average as an unsigned 58.18-decimal fixed-point number.
     #
     func avg{range_check_ptr}(x : felt, y : felt) -> (result : felt):
-        let (result : felt, _) = unsigned_div_rem(x + y, 2)
+        # sum() checks for uint250 x, y and addition
+        let (addition : felt) = sum(x, y)
 
-        #
-        # ERROR: uint250_overflow
-        #
-        with_attr error_message("math_ud58x18__uint250_overflow({x}, {y}, {result})"):
-            assert58x18(x, y, result)
-        end
+        # Cairo's `uint256_unsigned_div_rem` already checks:
+        #    remainder < divisor
+        #    quotient * divisor + remainder == dividend
+        let (result : felt, _) = unsigned_div_rem(addition, 2)
 
         return (result=result)
     end
@@ -190,7 +192,7 @@ namespace MathUD58x18:
     # @return result The result of the addition
     #
     func sum{range_check_ptr}(x : felt, y : felt) -> (result : felt):
-        let result : felt = x + y
+        let (result : felt) = x + y
 
         #
         # ERROR: sum_overflow
@@ -252,10 +254,9 @@ namespace MathUD58x18:
         end
 
         # asserts that (result / x == y)
-        # ERROR: uint250_multiplication_overflow
+        # ERROR: uint250_mul_overflow
         #
-        with_attr error_message(
-                "math_ud58x18__uint250_multiplication_overflow({x}, {y}, {result})"):
+        with_attr error_message("math_ud58x18__uint250_mul_overflow({x}, {y}, {result})"):
             let (_y : felt, _) = unsigned_div_rem(result, x)
             assert _y = y
         end
@@ -297,33 +298,43 @@ namespace MathUD58x18:
         return (result=result)
     end
 
+    #
+    # @notice Calculates floor(a×b÷denominator) with full precision. Throws if result overflows a uint256 or denominator == 0
+    # @param x The multiplicand as an unsigned 58.18-decimal fixed-point number
+    # @param y The multiplier as an unsigned 58.18-decimal fixed-point number
+    # @param z The divisor as an unsigned 58.18-decimal fixed-point number
+    # @return result The result as an unsigned 58.18-decimal fixed-point number
+    #
+    func mul_div{range_check_ptr}(x : felt, y : felt, z : felt) -> (result : felt):
+        # Performs overflow checks
+        let (xy : felt) = mul(x, y)
+
+        # Performs overflow checks and max ud58x18 checks
+        let (result : felt) = div(xy, z)
+
+        return (result=result)
+    end
+
     # ────────────────────────────────── SAFE FIXED POINT MATH
 
     #
     # @notice Calculates floor(x*y÷1e18) with full precision
+    #
     # @param x The multiplicand as an unsigned 58.18-decimal fixed-point number
     # @param y The multiplier as an unsigned 58.18-decimal fixed-point number
     # @return result The result as an unsigned 58.18-decimal fixed-point number
     #
     func mul_fixed_point{range_check_ptr}(x : felt, y : felt) -> (result : felt):
-        # Inner call to mul doing sufficient checks
+        # Inner call to mul doing sufficient checks for 0
         let product : felt = mul(x, y)
 
-        # Return 0 and avoid more steps
-        if product == 0:
-            return (result=0)
-        end
-
         #
-        # ERROR: uint250_multiplication_overflow
+        # ERROR: uint250_overflow
         #
-        with_attr error_message("math_ud58x18__uint250_multiplication_overflow({result})"):
+        with_attr error_message("math_ud58x18__uint250_mul_overflow({result})"):
             let (result : felt, _) = unsigned_div_rem(product, SCALE)
 
-            #
-            # ERROR: uint250_overflow
-            #
-            assert_250_bit(value=result)
+            assert_250_bit(result)
         end
 
         return (result=result)
@@ -331,6 +342,7 @@ namespace MathUD58x18:
 
     #
     # @notice Calculates floor(x*1e18÷y) with full precision
+    #
     # @param x The numerator as an unsigned 58.18-decimal fixed-point number
     # @param y The denominator as an unsigned 58.18-decimal fixed-point number
     # @param result The quotient as an unsigned 58.18-decimal fixed-point number
@@ -344,9 +356,9 @@ namespace MathUD58x18:
         let product : felt = mul(x, SCALE)
 
         #
-        # ERROR: uint250_multiplication_overflow
+        # ERROR: uint250_mul_overflow
         #
-        with_attr error_message("math_ud58x18__uint250_multiplication_overflow({result})"):
+        with_attr error_message("math_ud58x18__uint250_mul_overflow({result})"):
             let (result : felt, _) = unsigned_div_rem(product, y)
 
             #
@@ -382,13 +394,7 @@ namespace MathUD58x18:
         return sqrt(xy)
     end
 
-    func mul_div{range_check_ptr}(x : felt, y : felt, z : felt) -> (result : felt):
-        let (xy : felt) = mul(x, y)
-
-        let (result : felt) = div(xy, z)
-
-        return (result)
-    end
+    # ────────────────────────────────── MULDIV
 
     #
     # from: https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/math.cairo
