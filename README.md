@@ -1,7 +1,5 @@
 # **Cygnus LP Price Oracle on Starknet**
 
-<h3> Cygnus Nebula LP Oracle, on Starknet </h3>
-
 This is a Cairo implementation of our original oracle (https://github.com/CygnusDAO/cygnusdao-price-oracle/blob/main/contracts/ChainlinkNebulaOracle.sol).
 
 We make use of Empiric Network price feeds to bring one of the most accurate and reliable oracles in DeFi yet.
