@@ -333,6 +333,16 @@ func pending_admin{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check
     return Pending_Admin.read()
 end
 
+#
+# @notice Returns the total amount of oracles we currently have, a simple counter
+#
+@view
+func total_oracles{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (
+    total_oracles : felt
+):
+    return Total_Oracles.read()
+end
+
 # Constants ─────────────────────────────────────────
 
 #
@@ -366,15 +376,6 @@ func get_price_oracle{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_ch
     return Oracles.read(lp_token_pair=lp_token_pair)
 end
 
-#
-# @notice Returns the total amount of oracles we currently have, a simple counter
-#
-@view
-func total_oracles{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (
-    total_oracles : felt
-):
-    return Total_Oracles.read()
-end
 
 # ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 #     6. CONSTANT FUNCTIONS
