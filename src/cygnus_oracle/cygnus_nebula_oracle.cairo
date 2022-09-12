@@ -28,13 +28,6 @@ from starkware.cairo.common.cairo_builtins import HashBuiltin
 from starkware.cairo.common.pow import pow
 from starkware.cairo.common.uint256 import Uint256, uint256_eq, uint256_le, uint256_lt
 
-// Starkware syscalls
-from starkware.starknet.common.syscalls import (
-    get_caller_address,
-    get_contract_address,
-    get_block_timestamp,
-)
-
 // ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 //
 // @title  cygnus_empiric_lp_oracle
@@ -54,6 +47,9 @@ from src.cygnus_oracle.libraries.reentrancy_guard import ReentrancyGuard
 from src.cygnus_oracle.interfaces.interface_erc20 import IERC20
 from src.cygnus_oracle.interfaces.interface_dex_pair import IPair
 from src.cygnus_oracle.interfaces.interface_empiric_oracle import IEmpiricOracle
+
+// utils
+from src.cygnus_oracle.utils.context import msg_sender
 
 // ════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
 //     1. STRUCTS
@@ -323,20 +319,15 @@ func get_price_oracle{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_chec
 
 // / @notice Reverts if msg.sender is not admin
 func oracle_admin_internal{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() {
-    // get msg.sender
-    let (caller: felt) = get_caller_address();
-
     // factory admin address
     let (cygnus_admin: felt) = Admin.read();
 
     //
     // ERROR: caller_not_admin
     //
-    with_attr error_message("empiric_lp_oracle__caller_not_admin()") {
-        // check caller not 0 address
-        assert_not_zero(caller);
+    with_attr error_message("cygnus_oracle__caller_not_admin()") {
         // check caller is cygnus admin, else revert
-        assert caller = cygnus_admin;
+        assert msg_sender() = cygnus_admin;
     }
 
     return ();
