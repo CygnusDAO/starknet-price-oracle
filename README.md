@@ -1,5 +1,16 @@
 # **Cygnus LP Price Oracle on Starknet**
 
+
+Features:
+- Completely felt based, thus tx and storage costs are greatly optimised
+- Adjusts price of LP Tokens to always return in 18 decimals
+- Prevents price manipulations from attacks that move along constant AMM curves such as flash loans.
+- Empiric price feeds
+- Anyone is free to use or implement their own
+
+Caveats:
+- To use in contracts that rely on uint256 the price must be converted from a felt to a uint struct
+
 This is a Cairo implementation of our original oracle:
 ```
 https://github.com/CygnusDAO/cygnusdao-price-oracle/blob/main/contracts/ChainlinkNebulaOracle.sol
