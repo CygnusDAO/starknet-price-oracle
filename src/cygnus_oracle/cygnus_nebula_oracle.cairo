@@ -396,7 +396,7 @@ func normalize_price{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check
 func get_dai_price{syscall_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr}() -> (
     dai_price: felt, dai_decimals: felt
 ) {
-    // get dei unique key
+    // get Empiric's DAI unique key
     let (dai: felt) = Dai.read();
 
     // get the price of Dai from Empiric
